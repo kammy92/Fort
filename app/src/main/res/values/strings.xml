@@ -1,0 +1,204 @@
+<resources>
+    <string name="app_name">Fort</string>
+
+    <!-- EditText Error Strings -->
+    <string name="please_enter_name">Please enter Username</string>
+    <string name="please_enter_email">Please enter Email</string>
+    <string name="please_enter_mobile">Please enter Mobile</string>
+    <string name="please_enter_valid_email">Please enter valid Email</string>
+    <string name="please_enter_valid_mobile">Please enter valid Mobile</string>
+    <string name="please_select_visitor_type">Please select visitor type</string>
+    <string name="otp_didnt_match">OTP didn\'t match</string>
+
+
+    <string name="activity_login_hint_full_name">Full Name</string>
+    <string name="activity_login_hint_email">Email Address</string>
+    <string name="activity_login_hint_mobile">Mobile</string>
+    <string name="activity_login_button_submit">SUBMIT</string>
+    <string name="activity_login_text_i_agree">You agree to our Term and Condition and Privacy
+        Policy
+    </string>
+    <string name="activity_login_text_check_term_condition">Please check our Term And Condition
+    </string>
+
+
+    <string name="activity_main_text_no_service_found">No Services Found</string>
+    <string name="activity_main_text_powered_by">powered by</string>
+
+
+    <string name="activity_exhibitor_list_title">EXHIBITOR LIST</string>
+    <string name="activity_exhibitor_list_text_no_exhibitor_found">No Exhibitor Found</string>
+
+
+    <string name="activity_event_list_text_no_programme_found">No Event Found</string>
+
+
+    <string name="activity_session_list_text_no_session_found">No Session Found</string>
+
+
+    <string name="activity_hall_plan_title">HALL PLAN</string>
+
+    <string name="activity_my_favourites_title">MY FAVOURITES</string>
+
+    <string name="activity_event_detail_title">EVENT DETAIL</string>
+
+    <string name="activity_shop_online_title">Shop Online</string>
+    <string name="activity_shop_online_back_button">Back</string>
+
+    <string name="activity_brands_contact_details_title">BRANDS CONTACT DETAILS</string>
+
+
+    <string name="activity_brand_list_title">Brand List</string>
+    <string name="activity_brand_list_back_button">Back</string>
+
+
+    <string name="activity_event_list_title">Event List</string>
+    <string name="activity_event_list_back_button">Back</string>
+
+
+    <string name="activity_information_title">About Us</string>
+    <string name="activity_information_text_1">Gobindgarh Fort – the very symbol of Punjab. A symbol
+        of the times when Punjab was forged. Spread across a grand 43 acres, right in the heart of
+        Amritsar city, this magnificent, heritage site has a glorious history of its own, spanning
+        across 257 years – right from the era of the Bhangi Misl to the time of Maharaja Ranjit
+        Singh - to The British East India Company to The Indian Army to now, when finally, it opens
+        its gates to the people of Punjab.</string>
+    <string name="activity_information_text_2">The Punjab region in the 18th Century was ruled by
+        clans called Misls. it was in the 1760s that Gujar Singh Bhangi,- a local chieftain- built
+        this as a mud fortress- and it came to be known as “Bhagian da Qilla”. They owned it till
+        1809 or for almost 49 years. However, the financial position of the misl deteriorated over
+        time and by 1809 a minor ruler Gurdit S. Bhangi, a descendent of Gujjar Singh, was ruling
+        Amritsar with the help of his mother Mai Sukhan. Mai Sukhan asked Arur Mal, a sahukar
+        (trader)of the Bhangi township, to pay nazrana(Tribute). Not wanting to do so, Arur Mal
+        migrated to the township of the rival Kanhiyas misl in order to avoid payment. At that time
+        Maharaja Ranjit Singh was a rising star belonging to the Sukerchakia Misl. Arur Mal
+        conspired with Shaikh Kamaluddin, a leading citizen and they invited Ranjit Singh, to take
+        over the fort and the territories of Gurdit Singh. Maharaja Ranjit Singh was looking for
+        just such an opportunity. He called upon Mai Sukhan to surrender a big cannon famously known
+        as the Zamzama Cannon also known as “Bhangian di Tope”. Maharaja Ranjit Singh claimed that
+        he had the right to the cannon as it was the Sukherchakia Misl’s share of the spoils of the
+        war with the Afghan king, Ahmad Shah Durrani in 1765. The word Zamzama means “the Taker of
+        Strongholds.” Mai Sukhan, refused. Ranjit Singh thereupon entered the city through the
+        Ahluwalia gate. The Bhangies could not hold up again Ranjit Singh’s huge force.
+        The Maharaja took over the fort and along with it the Zamzama Cannon and Mai Sukhan and the
+        Bhangies were granted a few villages for their maintenance. it is stated that after winning
+        the fort, Maharaja Ranjit Singh went to Shri Harmandir Sahib for a darshan and thanking to
+        the supreme one and distributed positions to the residents of the town according to their
+        merit. The capture of the fort was a valuable acquisition for Maharaja Ranjit Singh. He
+        renamed the fort ‘Gobindgarh’ after the tenth Sikh Guru, Guru Shri Gobind Singhji. One of
+        the main reasons for the consolidation of the fort most likely was to guard the city of
+        Amritsar from invaders. This bean shaped city was most vulnerable to attacks and there were
+        constant threats from the Afghans from the North West frontier. This positioning of the fort
+        outside the historic walled city, unlike other forts in the centre of the historic cities,
+        acted as an invincible barrier to get through to the pilgrim city The fort saw major
+        repairs, additions and rebuilding from 1805 till 1809, under the supervision of its second
+        governor and foreign minister of Maharaja Ranjit Singh, Fakir Azizuddin. Large sums of money
+        were spent to make the fort a solid defence fortification with the help of the French
+        Generals who had joined Maharaja Ranjit Singh.
+        The Maharaja ruled successfully for forty years from the Sutlej to Indus, from Punjab Hills
+        to Khyber Pass on the Indo-Central Asian Route Every year he spent some time at Amritsar for
+        a change of climate and taking a bath in the holy tank. Generally, he reached Amritsar
+        before the rainy season set in and remained there till the Dussehra celebrations were over.
+        The Fort was captured by the British after the Second Anglo-Sikh War in 1849. After
+        Independence the fort was garrisoned by the Indian army in 1947. Gobindgarh has been at the
+        very heart of political events in the Punjab for most of its existence. Since it was always
+        a military preserve, it was inaccessible for the common man. For almost a century it was
+        hidden within a surrounding compound wall and concealed by trees and vegetation. More than
+        any other military site Gobindgarh encapsulates the dramatic rise of Punjab, its golden days
+        and then the collapse of the Sikh Kingdom when faced with the relentlessly expanding British
+        Empire, till it’s independence. Finally, Recognizing the historic significance of this
+        fortified precinct, in 2006 the Government of India handed over the vacant possession of the
+        fort for protection and conservation to the Government of Punjab. It was declared as a
+        historical monument by the Government of Punjab under The Punjab Ancient and Historical
+        Monuments and Archaeological Sites and Remains Act, in 1964.
+        This entire fort is currently being restored by the Government with the help of Asian
+        Development Bank.</string>
+    <string name="activity_information_text_3">Mayanagri World One Private Limited is Special
+        Purpose Vehicle mandated by the Government of Punjab for Development, Operation and
+        Maintenance of Virtual Reality Shows and Operation &amp; Maintenance of the Gobindgarh Fort,
+        Amritsar on PPP Mode</string>
+
+
+    <string name="activity_activities_title">Activities</string>
+    <string name="activity_begin_tour_title">Begin Tour</string>
+
+
+    <string name="dialog_text_quit_application">Do you want to quit the application?</string>
+    <string name="dialog_text_auto_fill">Do you want to auto fill the details?</string>
+    <string name="dialog_text_remove_favourite_exhibitor">Do you want to remove this exhibitor from
+        your
+        favourites?
+    </string>
+    <string name="dialog_text_add_favourite_exhibitor">Do you want to add this exhibitor to your
+        favourites?
+    </string>
+
+    <string name="dialog_text_remove_favourite_programme">Do you want to remove this event from
+        your
+        favourites?
+    </string>
+    <string name="dialog_text_add_favourite_programme">Do you want to add this event to your
+        favourites?
+    </string>
+    <string name="dialog_text_remove_favourite_session">Do you want to remove this session from your
+        favourites?
+    </string>
+    <string name="dialog_text_add_favourite_session">Do you want to add this session to your
+        favourites?
+    </string>
+
+
+    <string name="dialog_text_add_notes">Add Notes</string>
+    <string name="dialog_text_enter_otp">Enter the OTP sent to your mobile number</string>
+
+
+    <string name="progress_dialog_text_loading">Loading&#8230;</string>
+    <string name="progress_dialog_text_generating_survey">Generating Survey&#8230;</string>
+    <string name="progress_dialog_text_logging_out">Logging Out&#8230;</string>
+    <string name="progress_dialog_text_logging_in">Logging In&#8230;</string>
+    <string name="progress_dialog_text_please_wait">Please wait&#8230;</string>
+    <string name="progress_dialog_text_sending_request">Sending Request&#8230;</string>
+    <string name="progress_dialog_text_submitting_responses">Submitting Responses&#8230;</string>
+    <string name="progress_dialog_text_initializing">Initializing Application&#8230;\nThis may take
+        some time
+    </string>
+
+    <string name="snackbar_text_no_internet_connection_available">No Internet Connection available
+    </string>
+    <string name="snackbar_text_error_occurred">Error Occurred</string>
+    <string name="snackbar_text_exception_occurred">Exception Occurred</string>
+    <string name="snackbar_text_invalid_access_pin">Invalid Access PIN</string>
+
+    <string name="snackbar_action_go_to_settings">GO TO SETTINGS</string>
+    <string name="snackbar_action_dismiss">DISMISS</string>
+    <string name="snackbar_action_retry">RETRY</string>
+
+    <string name="snackbar_action_undo">UNDO</string>
+
+
+    <string name="dialog_text_new_version_available">New version of the application is available.
+        Please update
+    </string>
+
+
+    <string name="dialog_hint_optional">optional</string>
+
+    <string name="dialog_action_yes">YES</string>
+    <string name="dialog_action_no">NO</string>
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_cancel">CANCEL</string>
+    <string name="dialog_action_save">SAVE</string>
+    <string name="dialog_action_logout">LOGOUT</string>
+    <string name="dialog_action_submit">SUBMIT</string>
+    <string name="dialog_action_resend_otp">RESEND OTP</string>
+    <string name="dialog_action_proceed">PROCEED</string>
+    <string name="dialog_action_ignore">IGNORE</string>
+    <string name="dialog_action_update">UPDATE</string>
+    <string name="dialog_action_close">CLOSE</string>
+    <string name="dialog_action_show_all">SHOW ALL</string>
+
+
+    <string name="facebook_app_id">1050784248336887</string>
+
+
+</resources>
