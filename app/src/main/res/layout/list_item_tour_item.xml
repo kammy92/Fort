@@ -75,15 +75,16 @@
                 android:textColor="@color/text_color_white"/>
             <ImageView
                 android:id="@+id/ivInfo"
-                android:src="@drawable/ic_info"
-                android:layout_alignTop="@+id/tvTitle"
-                android:layout_alignBottom="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvTitle"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/tvTitle"
                 android:padding="@dimen/activity_margin_small"
-                android:textColor="@color/text_color_white"/>
+                android:src="@drawable/ic_info"
+                android:textColor="@color/text_color_white"
+                android:visibility="gone"/>
         </RelativeLayout>
 
 

@@ -51,13 +51,13 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
         final TourItem tourItem = tourItemList.get (position);
         
         Utils.setTypefaceToAllViews (activity, holder.tvSliderPosition);
-        
-        
-        if (tourItem.getDescription ().length () > 0) {
-            holder.ivInfo.setVisibility (View.VISIBLE);
-        } else {
-            holder.ivInfo.setVisibility (View.GONE);
-        }
+
+
+//        if (tourItem.getDescription ().length () > 0) {
+//            holder.ivInfo.setVisibility (View.VISIBLE);
+//        } else {
+//            holder.ivInfo.setVisibility (View.GONE);
+//        }
         
         holder.tvTitle.setText (tourItem.getTitle ());
         
@@ -192,7 +192,7 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
     }
     
     public interface OnItemClickListener {
-        public void onItemClick (View view, int position);
+        void onItemClick (View view, int position);
     }
     
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -205,17 +205,18 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
         
         public ViewHolder (View view) {
             super (view);
-            tvSliderPosition = (TextView) view.findViewById (R.id.tvSliderPosition);
-            ivTourItemImage = (ImageView) view.findViewById (R.id.ivTourItemImage);
-            slider = (SliderLayout) view.findViewById (R.id.slider);
-            rlSliderIndicator = (RelativeLayout) view.findViewById (R.id.rlSliderIndicator);
-            tvTitle = (TextView) view.findViewById (R.id.tvTitle);
-            ivInfo = (ImageView) view.findViewById (R.id.ivInfo);
+            tvSliderPosition = view.findViewById (R.id.tvSliderPosition);
+            ivTourItemImage = view.findViewById (R.id.ivTourItemImage);
+            slider = view.findViewById (R.id.slider);
+            rlSliderIndicator = view.findViewById (R.id.rlSliderIndicator);
+            tvTitle = view.findViewById (R.id.tvTitle);
+            ivInfo = view.findViewById (R.id.ivInfo);
             view.setOnClickListener (this);
         }
         
         @Override
         public void onClick (View v) {
+            mItemClickListener.onItemClick (v, getLayoutPosition ());
         }
     }
 }

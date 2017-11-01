@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class TourItem {
     int id;
     ArrayList<Integer> iconList = new ArrayList<> ();
-    String title, description;
+    String title, description, audio_uri;
     ArrayList<String> imageList = new ArrayList<> ();
     
-    public TourItem (int id, ArrayList<Integer> iconList, String title, String description, ArrayList<String> imageList) {
+    public TourItem (int id, ArrayList<Integer> iconList, String title, String description, String audio_uri, ArrayList<String> imageList) {
         this.iconList = iconList;
         this.id = id;
         this.title = title;
         this.description = description;
+        this.audio_uri = audio_uri;
         this.imageList = imageList;
     }
     
@@ -22,6 +23,14 @@ public class TourItem {
     
     public void setDescription (String description) {
         this.description = description;
+    }
+    
+    public String getAudio_uri () {
+        return audio_uri;
+    }
+    
+    public void setAudio_uri (String audio_uri) {
+        this.audio_uri = audio_uri;
     }
     
     public int getId () {

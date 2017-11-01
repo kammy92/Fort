@@ -201,4 +201,9 @@
     <string name="facebook_app_id">1050784248336887</string>
 
 
+    <string-array name="select_language">
+        <item>English</item>
+        <item>Gurmukhi</item>
+    </string-array>
+
 </resources>
