@@ -2,6 +2,7 @@ package com.karman.fort.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -25,6 +26,11 @@ import com.karman.fort.utils.SetTypeFace;
 import com.karman.fort.utils.Utils;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,13 +70,13 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
         holder.ivInfo.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View view) {
-                if (tourItem.getDescription ().contains ("youtube.com")){
+                if (tourItem.getDescription ().contains ("youtube.com")) {
 //                    Intent applicationIntent = new Intent (Intent.ACTION_VIEW, Uri.parse ("vnd.youtube:" + id));
                     Intent browserIntent = new Intent (Intent.ACTION_VIEW, Uri.parse (tourItem.getDescription ()));
 //                    try {
 //                        activity.startActivity (applicationIntent);
 //                    } catch (ActivityNotFoundException ex) {
-                        activity.startActivity (browserIntent);
+                    activity.startActivity (browserIntent);
 //                    }
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder (activity)
@@ -82,7 +88,7 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
                             .onPositive (new MaterialDialog.SingleButtonCallback () {
                                 @Override
                                 public void onClick (@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                    
+    
                                     dialog.dismiss ();
                                 }
                             }).build ();
@@ -135,10 +141,9 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
                 holder.tvSliderPosition.setText ("1 of " + tourItem.getIconList ().size ());
                 holder.rlSliderIndicator.setVisibility (View.VISIBLE);
                 for (int i = 0; i < tourItem.getIconList ().size (); i++) {
-                    int image = tourItem.getIconList ().get (i);
                     CustomImageSlider slider = new CustomImageSlider (activity);
                     slider
-                            .image (image)
+                            .image (createFileFromInputStream (tourItem.getIconList ().get (i)))
                             .setScaleType (BaseSliderView.ScaleType.CenterCrop)
                             .setOnSliderClickListener (new BaseSliderView.OnSliderClickListener () {
                                 @Override
@@ -173,7 +178,11 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
             holder.ivTourItemImage.setVisibility (View.VISIBLE);
             holder.rlSliderIndicator.setVisibility (View.GONE);
             if (tourItem.getIconList ().size () > 0) {
-                holder.ivTourItemImage.setImageResource (tourItem.getIconList ().get (0));
+                try {
+                    holder.ivTourItemImage.setImageDrawable (Drawable.createFromStream (activity.getAssets ().open (tourItem.getIconList ().get (0)), null));
+                } catch (IOException ex) {
+                    return;
+                }
             } else {
                 Picasso.with (activity).load (tourItem.getImageList ().get (0)).into (holder.ivTourItemImage);
             }
@@ -189,6 +198,27 @@ public class TourItemListAdapter extends RecyclerView.Adapter<TourItemListAdapte
     
     public void SetOnItemClickListener (final OnItemClickListener mItemClickListener) {
         this.mItemClickListener = mItemClickListener;
+    }
+    
+    private File createFileFromInputStream (String file_name) {
+        try {
+            InputStream is = activity.getAssets ().open (file_name);
+            File f = new File (activity.getCacheDir () + "test.jpg");
+            OutputStream outputStream = new FileOutputStream (f);
+            byte buffer[] = new byte[1024];
+            int length = 0;
+            
+            while ((length = is.read (buffer)) > 0) {
+                outputStream.write (buffer, 0, length);
+            }
+            
+            outputStream.close ();
+            is.close ();
+            return f;
+        } catch (IOException e) {
+            //Logging exception
+        }
+        return null;
     }
     
     public interface OnItemClickListener {

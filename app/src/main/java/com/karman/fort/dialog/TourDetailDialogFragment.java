@@ -3,6 +3,7 @@ package com.karman.fort.dialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,7 +27,11 @@ import com.karman.fort.utils.CustomImageSlider;
 import com.karman.fort.utils.Utils;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -47,7 +52,7 @@ public class TourDetailDialogFragment extends DialogFragment {
     ImageView ivPlayPause;
     TextView tvPlayTime;
     
-    ArrayList<Integer> iconList = new ArrayList<> ();
+    ArrayList<String> iconList = new ArrayList<> ();
     ArrayList<String> imageList = new ArrayList<> ();
     String title;
     String description;
@@ -94,13 +99,13 @@ public class TourDetailDialogFragment extends DialogFragment {
         }
     };
     
-    public TourDetailDialogFragment newInstance (ArrayList<Integer> iconList, String title, String description, String audio_uri, ArrayList<String> imageList) {
+    public TourDetailDialogFragment newInstance (ArrayList<String> iconList, String title, String description, String audio_uri, ArrayList<String> imageList) {
         TourDetailDialogFragment f = new TourDetailDialogFragment ();
         Bundle args = new Bundle ();
         args.putString ("title", title);
         args.putString ("description", description);
         args.putString ("audio_uri", audio_uri);
-        args.putIntegerArrayList ("icon_list", iconList);
+        args.putStringArrayList ("icon_list", iconList);
         args.putStringArrayList ("image_list", imageList);
         f.setArguments (args);
         return f;
@@ -159,7 +164,7 @@ public class TourDetailDialogFragment extends DialogFragment {
     private void initBundle () {
         Bundle bundle = this.getArguments ();
         imageList = bundle.getStringArrayList ("image_list");
-        iconList = bundle.getIntegerArrayList ("icon_list");
+        iconList = bundle.getStringArrayList ("icon_list");
         title = bundle.getString ("title");
         description = bundle.getString ("description");
         audio_uri = bundle.getString ("audio_uri");
@@ -242,10 +247,9 @@ public class TourDetailDialogFragment extends DialogFragment {
                 tvSliderPosition.setText ("1 of " + iconList.size ());
                 rlSliderIndicator.setVisibility (View.VISIBLE);
                 for (int i = 0; i < iconList.size (); i++) {
-                    int image = iconList.get (i);
                     CustomImageSlider slider2 = new CustomImageSlider (getActivity ());
                     slider2
-                            .image (image)
+                            .image (createFileFromInputStream (iconList.get (i)))
                             .setScaleType (BaseSliderView.ScaleType.CenterCrop)
                             .setOnSliderClickListener (new BaseSliderView.OnSliderClickListener () {
                                 @Override
@@ -280,7 +284,11 @@ public class TourDetailDialogFragment extends DialogFragment {
             ivTourImage.setVisibility (View.VISIBLE);
             rlSliderIndicator.setVisibility (View.GONE);
             if (iconList.size () > 0) {
-                ivTourImage.setImageResource (iconList.get (0));
+                try {
+                    ivTourImage.setImageDrawable (Drawable.createFromStream (getActivity ().getAssets ().open (iconList.get (0)), null));
+                } catch (IOException ex) {
+                    return;
+                }
             } else {
                 Picasso.with (getActivity ()).load (imageList.get (0)).into (ivTourImage);
             }
@@ -390,5 +398,26 @@ public class TourDetailDialogFragment extends DialogFragment {
         seekHandler.removeCallbacks (moveSeekBarThread);
         mediaPlayer.stop ();
         mediaPlayer.release ();
+    }
+    
+    private File createFileFromInputStream (String file_name) {
+        try {
+            InputStream is = getActivity ().getAssets ().open (file_name);
+            File f = new File (getActivity ().getCacheDir () + "test.jpg");
+            OutputStream outputStream = new FileOutputStream (f);
+            byte buffer[] = new byte[1024];
+            int length = 0;
+            
+            while ((length = is.read (buffer)) > 0) {
+                outputStream.write (buffer, 0, length);
+            }
+            
+            outputStream.close ();
+            is.close ();
+            return f;
+        } catch (IOException e) {
+            //Logging exception
+        }
+        return null;
     }
 }

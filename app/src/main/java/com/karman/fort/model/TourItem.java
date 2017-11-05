@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class TourItem {
     int id;
-    ArrayList<Integer> iconList = new ArrayList<> ();
+    ArrayList<String> iconList = new ArrayList<> ();
     String title, description, audio_uri;
     ArrayList<String> imageList = new ArrayList<> ();
     
-    public TourItem (int id, ArrayList<Integer> iconList, String title, String description, String audio_uri, ArrayList<String> imageList) {
+    public TourItem (int id, ArrayList<String> iconList, String title, String description, String audio_uri, ArrayList<String> imageList) {
         this.iconList = iconList;
         this.id = id;
         this.title = title;
@@ -41,11 +41,11 @@ public class TourItem {
         this.id = id;
     }
     
-    public ArrayList<Integer> getIconList () {
+    public ArrayList<String> getIconList () {
         return iconList;
     }
     
-    public void setIconList (ArrayList<Integer> iconList) {
+    public void setIconList (ArrayList<String> iconList) {
         this.iconList = iconList;
     }
     

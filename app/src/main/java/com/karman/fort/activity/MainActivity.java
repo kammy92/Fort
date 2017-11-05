@@ -2,11 +2,15 @@ package com.karman.fort.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.View;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.karman.fort.R;
+import com.karman.fort.utils.SetTypeFace;
 import com.karman.fort.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,42 +60,42 @@ public class MainActivity extends AppCompatActivity {
         tvBeginTour.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View view) {
-//                new MaterialDialog.Builder (MainActivity.this)
-//                        .content ("Enter OTP")
-//                        .inputType (InputType.TYPE_CLASS_NUMBER)
-//                        .typeface (SetTypeFace.getTypeface (MainActivity.this), SetTypeFace.getTypeface (MainActivity.this))
-//                        .positiveText ("SUBMIT")
-//                        .input ("", "", false, new MaterialDialog.InputCallback () {
-//                            @Override
-//                            public void onInput (@NonNull MaterialDialog dialog, CharSequence input) {
-//                                if (input.toString ().length () == 6 && input.toString ().equalsIgnoreCase ("123456")) {
-//                                    dialog.dismiss ();
-//                                    new MaterialDialog.Builder (MainActivity.this)
-//                                            .title ("Please select a Language")
-//                                            .typeface (SetTypeFace.getTypeface (MainActivity.this), SetTypeFace.getTypeface (MainActivity.this))
-//                                            .items (R.array.select_language)
-//                                            .itemsCallback (new MaterialDialog.ListCallback () {
-//                                                @Override
-//                                                public void onSelection (MaterialDialog dialog, View itemView, int position, CharSequence text) {
-//                                                    Intent intent = new Intent (MainActivity.this, BeginTourActivity.class);
-//                                                    intent.putExtra ("language", text);
-//                                                    startActivity (intent);
-//                                                    overridePendingTransition (R.anim.slide_in_right, R.anim.slide_out_left);
-//                                                }
-//                                            })
-//                                            .show ();
-//                                } else {
-//                                    Utils.showToast (MainActivity.this, "OTP not mach", false);
-//                                }
-//                            }
-//                        })
-//                        .show ();
-//
-//
-                Intent intent = new Intent (MainActivity.this, BeginTourActivity.class);
-                intent.putExtra ("language", getResources ().getStringArray (R.array.select_language)[0]);
-                startActivity (intent);
-                overridePendingTransition (R.anim.slide_in_right, R.anim.slide_out_left);
+                new MaterialDialog.Builder (MainActivity.this)
+                        .content ("Enter OTP")
+                        .inputType (InputType.TYPE_CLASS_NUMBER)
+                        .typeface (SetTypeFace.getTypeface (MainActivity.this), SetTypeFace.getTypeface (MainActivity.this))
+                        .positiveText ("SUBMIT")
+                        .input ("", "", false, new MaterialDialog.InputCallback () {
+                            @Override
+                            public void onInput (@NonNull MaterialDialog dialog, CharSequence input) {
+                                if (input.toString ().length () == 6 && input.toString ().equalsIgnoreCase ("123456")) {
+                                    dialog.dismiss ();
+                                    new MaterialDialog.Builder (MainActivity.this)
+                                            .title ("Please select a Language")
+                                            .typeface (SetTypeFace.getTypeface (MainActivity.this), SetTypeFace.getTypeface (MainActivity.this))
+                                            .items (R.array.select_language)
+                                            .itemsCallback (new MaterialDialog.ListCallback () {
+                                                @Override
+                                                public void onSelection (MaterialDialog dialog, View itemView, int position, CharSequence text) {
+                                                    Intent intent = new Intent (MainActivity.this, BeginTourActivity.class);
+                                                    intent.putExtra ("language", text);
+                                                    startActivity (intent);
+                                                    overridePendingTransition (R.anim.slide_in_right, R.anim.slide_out_left);
+                                                }
+                                            })
+                                            .show ();
+                                } else {
+                                    Utils.showToast (MainActivity.this, "OTP not mach", false);
+                                }
+                            }
+                        })
+                        .show ();
+
+
+//                Intent intent = new Intent (MainActivity.this, BeginTourActivity.class);
+//                intent.putExtra ("language", getResources ().getStringArray (R.array.select_language)[0]);
+//                startActivity (intent);
+//                overridePendingTransition (R.anim.slide_in_right, R.anim.slide_out_left);
     
             }
         });
