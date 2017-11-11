@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fort</string>
+    <string name="app_name">Gobindgarh Fort</string>
 
     <!-- EditText Error Strings -->
     <string name="please_enter_name">Please enter Username</string>

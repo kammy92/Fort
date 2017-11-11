@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.karman.fort"
+<manifest package="com.gobindgarh.fort"
           xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
+        android:name=".app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"
-        android:screenOrientation="portrait">
+        <activity android:name="com.gobindgarh.fort.activity.MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -18,15 +20,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AboutUsActivity"
+            android:name="com.gobindgarh.fort.activity.AboutUsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.ActivitiesActivity"
+            android:name="com.gobindgarh.fort.activity.ActivitiesActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.BeginTourActivity"
+            android:name="com.gobindgarh.fort.activity.BeginTourActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

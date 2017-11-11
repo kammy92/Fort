@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:indeterminateTint="@color/primary"
             android:indeterminateTintMode="src_in"/>
-        <com.indiasupply.isdental.utils.CustomFontTextView
+        <com.gobindgarh.fort.utils.CustomFontTextView
             android:id="@+id/tvProgressDialogMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
